@@ -19,15 +19,25 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-          <div>   { !user.isSignedIn &&  <SignInButton/>}    </div> 
-          <div>   { !!user.isSignedIn &&  <SignOutButton/>}    </div>
+      <img
+            className="mx-auto h-auto w-auto"
+            src="https://cdn.discordapp.com/attachments/384545098949459969/1110744392765026475/logo.png"
+            alt="Your Company"
+          />
 
-          
+      <div className="flex justify-center rounded-auto text-sm font-semibold leading-6 py-2.5">
+        {!user.isSignedIn && <SignInButton />}
+      </div>
+
+      <div className="flex auto justify-center rounded-auto text-sm font-semibold leading-6 py-2.5">
+               {!!user.isSignedIn && <SignOutButton />}
+        </div>
         
         <SignIn path="/sign-in" routing="path"signUpUrl="/signup" />
 
   
     </>
+
   );
 };
 
